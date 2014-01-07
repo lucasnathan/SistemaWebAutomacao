@@ -2443,6 +2443,7 @@ fieldset[disabled] .btn-warning.active {
   color: #ffffff;
   background-color: #d9534f;
   border-color: #d43f3a;
+  
 }
 
 .btn-danger:hover,
@@ -3644,7 +3645,11 @@ input[type="button"].btn-block {
     left: auto;
   }
 }
-
+.btn-group-vertical1{
+	position:relative;
+	float:right;
+	text-align:right;
+}
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -3656,6 +3661,7 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn {
   position: relative;
   float: left;
+  
 }
 
 .btn-group > .btn:hover,
