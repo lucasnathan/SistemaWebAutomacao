@@ -10,8 +10,9 @@
 
     <title>Projeto</title>
 
-    <!-- Jquery Script -->
-  	<script src="jquery-1.10.2.js"></script>
+    <!-- Jquery Script 
+  	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+    -->
     
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
@@ -24,32 +25,43 @@
   <body>
 
     <div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Automacao</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="TV.html">TV</a></li>
-            <li class="active"><a href="luz.html">Luz</a></li>
-            <li><a href="arCondicionado.html">Ar Condicionado</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Automacao</a>
+          </div><!--/.navbar-header -->
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Controle</a></li>
+              <li><a href="#">Contatos</a></li>
+              <li><a href="#">Sobre</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-->
+    </div><!--/.nav-default-->
+    <div id="wrapper">
+    
+      
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li><a href="TV.html">Televisor</a></li>
+          <li class="active"><a href="#">Iluminação</a></li>
+          <li><a href="arCondicionado.html">Ar Condicionado</a></li>
+        </ul>
       </div>
-    </div>
-
-    <div class="container">
-
-      <div class="starter-template">
-      <h1>Luz</h1>
-        <!-- Box -->
-        <div class="jumbotron">
+      
+      <div class="container">
+        <div class="starter-template">
+        <h1>Controle de Iluminação</h1>
+          <!-- Box -->
+          <div class="jumbotron">
 
         <!-- Botoes de Controle -->
         <div class"btn-group-vertical">
@@ -59,10 +71,12 @@
           </div>
                          
       	</div><!-- jumbotron -->
-        
-      </div><!-- statter-template -->
+          
+        </div><!-- statter-template -->
+  
+      </div><!-- /.container -->
 
-    </div><!-- /.container -->
+	</div><!--/.wrapper-->
 
 
     <!-- Bootstrap core JavaScript
