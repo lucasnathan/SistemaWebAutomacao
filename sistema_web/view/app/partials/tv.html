@@ -7,7 +7,7 @@
 		<div class="col-md-4"> </div>
 		<div class="col-md-4">
 			<div class = "btn-group-vertical">
-				<h2> POWER </h2>
+				<h3> Power </h3>
 				<button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
 			</div>
 		</div>
@@ -15,39 +15,21 @@
 	</div>
 	<br>
 	<div class="container">
-		<div class="col-md-4"> 
-			
-			<div class="btn-group">
-				<input type="text" id="txtCanal" class="form-control">
-				
-				<button id="foo" type="button" class="btn btn-default btn-lg"> 1 </button>
-				<button  type="button" class="btn btn-default btn-lg"> 2 </button>
-				<button  type="button" class="btn btn-default btn-lg"> 3 </button>
-				<br>
-							
-				<button type="button" class="btn btn-default btn-lg"> 4 </button>
-				<button type="button" class="btn btn-default btn-lg"> 5 </button>
-				<button type="button" class="btn btn-default btn-lg"> 6 </button>
-					
-				<br>
-				<button type="button" class="btn btn-default btn-lg"> 7 </button>
-				<button type="button" class="btn btn-default btn-lg"> 8 </button>
-				<button type="button" class="btn btn-default btn-lg"> 9 </button>
-				<br>
-				<button type="button" class="btn btn-default btn-lg"> 0 </button>
-
-			</div>
+		<div class="col-md-4">
+				<h3> Digite o canal desejado:</h3>
+				<input type="text" id="txtCanal" class="form-control" maxlength="3">
+				<button type="button" id="btnTrocaCanal" class="btn btn-success btn-lg"> <span class="glyphicon glyphicon-ok-sign"></span> </button>
 		</div>
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
-				<h2> VOLUME </h2>
+				<h3> Volume </h3>
 				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
 				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
 		</div>
 		<div class="col-md-4"> 
 			<div class = "btn-group-vertical">
-				<h2> CANAL </h2>
+				<h3> Canal </h3>
 				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
 				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
@@ -57,11 +39,13 @@
 	
 <script>
 	$(document).ready(function(){
-		$( "#foo" ).bind( "click", function() {
-			txtCanal.value = txtCanal.value + $(this).text();
+	
+		$("#btnTrocaCanal").click(function(){
+			alert("Trocar para canal: "+ $("#txtCanal").val());
 		});
 		
-		$('txtCanal').attr('maxlength', 3);		
+		
+				
 	});
 </script>
 
