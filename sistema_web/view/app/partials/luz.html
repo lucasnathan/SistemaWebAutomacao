@@ -1,12 +1,33 @@
-<h1>Controle de Iluminação</h1>
+<div class="page-header">
+	<h1>Controle de Iluminação</h1>
+</div>	
 <!-- Box -->
-<div class="jumbotron"> 
-
-	<!-- Botoes de Controle -->
-	<div class"btn-group-vertical">
-		<div class="btn-group-vertical1">
-			<button type="button" class="btn btn-danger" align="center"> <span class="glyphicon glyphicon-off"></span> </button>
+<div class="jumbotron">
+	<!-- content -->
+	<div class="container">
+		<!-- Botoes de Controle -->
+		
+		<div class="col-md-4">
+			<h2>LÂMPADA 1</h2>
+			<button type="button" id="lamp1" class="btn btn-danger btn-lg" align="center"> <span class="glyphicon glyphicon-off"></span> </button>
 		</div>
+		
+		<div class="col-md-4">
+			<h2>LÂMPADA 2</h2>
+		    <button type="button" id="lamp2" class="btn btn-danger btn-lg" align="center"> <span class="glyphicon glyphicon-off"></span> </button>
+		</div>
+	<!-- content -->	
 	</div>
 <!-- jumbotron --> 
 </div>
+
+<script>
+	$(document).ready(function(){
+	  $("#lamp1").click(function(){
+		alert('Lâmpada 1 ligada!');
+	  });
+	  $("#lamp2").click(function(){
+		alert('Lâmpada 2 ligada!');
+	  });	  
+	});
+</script>
