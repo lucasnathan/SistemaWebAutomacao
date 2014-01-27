@@ -8,7 +8,7 @@
 		<div class="col-md-4">
 			<div class = "btn-group-vertical">
 				<h3> Power </h3>
-				<button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
+				<button type="button" id="btLigaAr" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
 			</div>
 		</div>
 		<div class="col-md-4"> </div>
@@ -18,16 +18,16 @@
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
 				<h3>Temperatura</h3>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" id="sobeTemp" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" id="desceTemp"class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
 		</div>
 		
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
 				<h3>Ventilar</h3>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" id="sobeVent" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" id="desceVent" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>		
 		</div>
 		
@@ -35,12 +35,85 @@
 			<div class="btn-group">
 				<h3>Funções</h3>
 				<div>
-					<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-fire"></span> </button>
-					<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-tint"></span> </button>
-					<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-cloud"></span> </button>
-					<button type="button" class="btn btn-default btn-lg">Swing</button>
+					<button type="button" id="btCalor" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-fire"></span> </button>
+					<button type="button" id="btHumid" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-tint"></span> </button>
+					<button type="button" id="btResfr" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-cloud"></span> </button>
+					<button type="button" id="btSwing" class="btn btn-default btn-lg">Swing</button>
 				</div>
 			</div>	
 		</div>
 	</div>
 </div>
+<script>
+	$(document).ready(function() {
+		window.console.log('All ready to go');
+		function debug(str) {
+			$("#debug").append("<p>"+str+"<p>");
+		}
+		
+		try {
+			window.console.log("Setting up socket");
+			// ws = new WebSocket("ws://127.0.0.1:5331");
+			ws = new WebSocket("ws://10.0.0.50");
+										
+			ws.onopen = function() {
+				debug("Connected");
+			};
+			
+			ws.onmessage = function(evt) {
+				debug("Got message");
+				$("#msg").append("<p>"+evt.data+"<p>");
+			};
+			
+			ws.onerror = function(evt) {
+				debug("ERROR!");
+				$("#msg").append("<p> ERROR: "+evt.data+"<p>");
+			};
+			
+			ws.onclose = function() {
+				debug("Closed");
+			};
+			
+			$("#sobeTemp").click(function() {
+				ws.send("D031");
+			});
+			
+			$("#desceTemp").click(function() {
+				ws.send("D030");
+			});
+
+			$("#sobeVent").click(function() {
+				ws.send("D031");
+			});
+			
+			$("#desceVent").click(function() {
+				ws.send("D030");
+			});
+			
+			$("#btHumid").click(function() {
+				ws.send("D031");
+			});
+			
+			$("#btCalor").click(function() {
+				ws.send("D030");
+			});			
+			
+			$("#btResfr").click(function() {
+				ws.send("D031");
+			});
+			
+			$("#btSwing").click(function() {
+				ws.send("D030");
+			});
+			
+			$("#btLigaAr").click(function() {
+				alert("Liga/Desliga Ar");
+				ws.send("D030");
+			});					
+			
+		}
+		catch(error) {
+			window.console.log('<p>Error'+error);
+		}
+	});
+</script>

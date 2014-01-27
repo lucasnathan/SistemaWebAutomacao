@@ -8,7 +8,7 @@
 		<div class="col-md-4">
 			<div class = "btn-group-vertical">
 				<h3> Power </h3>
-				<button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
+				<button type="button" id="ligaTV" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
 			</div>
 		</div>
 		<div class="col-md-4"> </div>
@@ -17,35 +17,86 @@
 	<div class="container">
 		<div class="col-md-4">
 				<h3> Digite o canal desejado:</h3>
-				<input type="text" id="txtCanal" class="form-control" maxlength="3">
-				<button type="button" id="btnTrocaCanal" class="btn btn-success btn-lg"> <span class="glyphicon glyphicon-ok-sign"></span> </button>
+				<input type="text"    id="txtCanal" class="form-control" maxlength="3">
+				<button type="button" id="btTrocaCanal" class="btn btn-success btn-lg"> <span class="glyphicon glyphicon-ok-sign"></span> </button>
 		</div>
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
 				<h3> Volume </h3>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" id="sobeVol" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" id="desceVol" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
 		</div>
 		<div class="col-md-4"> 
 			<div class = "btn-group-vertical">
 				<h3> Canal </h3>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" id="sobeCanal" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" id="desceCanal" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<div id="msg"></div>
+<div id="debug"></div>
 	
 <script>
-	$(document).ready(function(){
-	
-		$("#btnTrocaCanal").click(function(){
-			alert("Trocar para canal: "+ $("#txtCanal").val());
-		});
+	$(document).ready(function() {
+		window.console.log('All ready to go');
+		function debug(str) {
+			$("#debug").append("<p>"+str+"<p>");
+		}
 		
-		
-				
+		try {
+			window.console.log("Setting up socket");
+			// ws = new WebSocket("ws://127.0.0.1:5331");
+			ws = new WebSocket("ws://10.0.0.50");
+										
+			ws.onopen = function() {
+				debug("Connected");
+			};
+			
+			ws.onmessage = function(evt) {
+				debug("Got message");
+				$("#msg").append("<p>"+evt.data+"<p>");
+			};
+			
+			ws.onerror = function(evt) {
+				debug("ERROR!");
+				$("#msg").append("<p> ERROR: "+evt.data+"<p>");
+			};
+			
+			ws.onclose = function() {
+				debug("Closed");
+			};
+			
+			$("#ligaTV").click(function() {
+				ws.send("D031");
+			});
+			
+			$("#sobeVol").click(function() {
+				ws.send("D030");
+			});	
+			
+			$("#desceVol").click(function() {
+				ws.send("D030");
+			});	
+
+			$("#sobeCanal").click(function() {
+				ws.send("D030");
+			});
+			
+			$("#desceCanal").click(function() {
+				ws.send("D030");
+			});
+			
+			$("#btTrocaCanal").click(function() {
+				ws.send("D030");
+			});			
+		}
+		catch(error) {
+			window.console.log('<p>Error'+error);
+		}
 	});
 </script>
 
