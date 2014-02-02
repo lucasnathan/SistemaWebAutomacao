@@ -16,6 +16,10 @@ def favicon():
 @route('/js/:path#.+#')
 def server_static(path):
     return static_file(path, root='./app/js/')
+	
+@route('/libs/:path#.+#')
+def server_static(path):
+    return static_file(path, root='./app/libs/')	
 
 @route('/css/:path#.+#')
 def server_static(path):
@@ -29,9 +33,9 @@ def server_static(path):
 def server_static(path):
     return static_file(path, root='./app/fonts/')
 
-@route('/partials/:path#.+#')
+@route('/views/:path#.+#')
 def server_static(path):
-    return static_file(path, root='./app/partials/')
+    return static_file(path, root='./app/views/')
 
 # this method define the main file, such it is index.html..
 @route('/')

@@ -2,7 +2,7 @@
 	<h1>Controle Ar Condicionado</h1>
 </div>	
 <!-- Box -->
-<div class="jumbotron">	
+<div class="jumbotron" ng-controller="ArCtrl">	
 	<div class="container">
 		<div class="col-md-4"> </div>
 		<div class="col-md-4">
@@ -44,76 +44,3 @@
 		</div>
 	</div>
 </div>
-<script>
-	$(document).ready(function() {
-		window.console.log('All ready to go');
-		function debug(str) {
-			$("#debug").append("<p>"+str+"<p>");
-		}
-		
-		try {
-			window.console.log("Setting up socket");
-			// ws = new WebSocket("ws://127.0.0.1:5331");
-			ws = new WebSocket("ws://10.0.0.50");
-										
-			ws.onopen = function() {
-				debug("Connected");
-			};
-			
-			ws.onmessage = function(evt) {
-				debug("Got message");
-				$("#msg").append("<p>"+evt.data+"<p>");
-			};
-			
-			ws.onerror = function(evt) {
-				debug("ERROR!");
-				$("#msg").append("<p> ERROR: "+evt.data+"<p>");
-			};
-			
-			ws.onclose = function() {
-				debug("Closed");
-			};
-			
-			$("#sobeTemp").click(function() {
-				ws.send("D031");
-			});
-			
-			$("#desceTemp").click(function() {
-				ws.send("D030");
-			});
-
-			$("#sobeVent").click(function() {
-				ws.send("D031");
-			});
-			
-			$("#desceVent").click(function() {
-				ws.send("D030");
-			});
-			
-			$("#btHumid").click(function() {
-				ws.send("D031");
-			});
-			
-			$("#btCalor").click(function() {
-				ws.send("D030");
-			});			
-			
-			$("#btResfr").click(function() {
-				ws.send("D031");
-			});
-			
-			$("#btSwing").click(function() {
-				ws.send("D030");
-			});
-			
-			$("#btLigaAr").click(function() {
-				alert("Liga/Desliga Ar");
-				ws.send("D030");
-			});					
-			
-		}
-		catch(error) {
-			window.console.log('<p>Error'+error);
-		}
-	});
-</script>
