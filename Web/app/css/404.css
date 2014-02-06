@@ -4,7 +4,7 @@
 }
 
 body {
-    background:url('../img/bg.png') no-repeat center center #1d1d1d;
+    /*background:url('../img/bg.png') no-repeat center center #1d1d1d;*/
     color:#eee;
     font-family:Corbel,Arial,Helvetica,sans-serif;
     font-size:13px;
@@ -49,20 +49,6 @@ hgroup {
     width:850px;
     font-family:'Century Gothic',Calibri,'Myriad Pro',Arial,Helvetica,sans-serif;
     text-align:center;
-}
-
-h1 {
-    color:#76D7FB;
-    font-size:60px;
-    text-shadow:3px 3px 0 #3D606D;
-    white-space:nowrap;
-}
-
-h2 {
-    color:#9FE3FC;
-    font-size:18px;
-    font-weight:normal;
-    padding:25px 0;
 }
 
 /* Only Needed For The Demo Page */

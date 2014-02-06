@@ -9,15 +9,13 @@ var app = angular.module('myApp', [
   'myApp.directives',
   'myApp.controllers']);
   
-app.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/tv' , {templateUrl: 'views/tv.html', controller: 'TvCtrl'});
-  $routeProvider.when('/ar' , {templateUrl: 'views/ar.html', controller: 'ArCtrl'});
-  $routeProvider.when('/luz', {templateUrl:'views/luz.html', controller: 'LuzCtrl'});  
-  $routeProvider.otherwise({redirectTo: '/tv'});  
-}]);
+app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+	$routeProvider.when('/tv' , {templateUrl: 'views/tv.html', controller: 'TvCtrl'});
+	$routeProvider.when('/ar' , {templateUrl: 'views/ar.html', controller: 'ArCtrl'});
+	$routeProvider.when('/luz', {templateUrl:'views/luz.html', controller: 'LuzCtrl'});  
+	$routeProvider.otherwise({redirectTo: '/tv'});
 
-app.config(['$httpProvider', function($httpProvider) {
-    //Enable cross domain calls
+	//Enable cross domain calls
     $httpProvider.defaults.useXDomain = true;
 
     //Remove the header containing XMLHttpRequest used to identify ajax call 

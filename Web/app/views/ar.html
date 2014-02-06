@@ -8,7 +8,7 @@
 		<div class="col-md-4">
 			<div class = "btn-group-vertical">
 				<h3> Power </h3>
-				<button type="button" id="btLigaAr" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
+				<button type="button" ng-click ='power()' class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
 			</div>
 		</div>
 		<div class="col-md-4"> </div>
@@ -18,16 +18,16 @@
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
 				<h3>Temperatura</h3>
-				<button type="button" id="sobeTemp" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" id="desceTemp"class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" ng-click='arSobeTemp()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" ng-click='arDescTemp()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>
 		</div>
 		
 		<div class="col-md-4">
 			<div class="btn-group-vertical">
 				<h3>Ventilar</h3>
-				<button type="button" id="sobeVent" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
-				<button type="button" id="desceVent" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+				<button type="button" ng-click='arAumentaVent()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+				<button type="button" ng-click='arDiminuiVent()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
 			</div>		
 		</div>
 		
@@ -35,10 +35,10 @@
 			<div class="btn-group">
 				<h3>Funções</h3>
 				<div>
-					<button type="button" id="btCalor" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-fire"></span> </button>
-					<button type="button" id="btHumid" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-tint"></span> </button>
-					<button type="button" id="btResfr" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-cloud"></span> </button>
-					<button type="button" id="btSwing" class="btn btn-default btn-lg">Swing</button>
+					<button type="button" ng-click='arModoQuente()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-fire"></span> </button>
+					<button type="button" ng-click='arModoVentilacao()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-tint"></span> </button>
+					<button type="button" ng-click='arModoHumid()' class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-cloud"></span> </button>
+					<button type="button" ng-click='arModoSwing()' class="btn btn-default btn-lg">Swing</button>
 				</div>
 			</div>	
 		</div>
