@@ -4,9 +4,6 @@
 // Declare app level module which depends on filters, and services
 var app = angular.module('myApp', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
   'myApp.controllers']);
   
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
@@ -16,9 +13,9 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
 	$routeProvider.otherwise({redirectTo: '/tv'});
 
 	//Enable cross domain calls
-    $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.useXDomain = true;
 
-    //Remove the header containing XMLHttpRequest used to identify ajax call 
-    //that would prevent CORS from working
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  //Remove the header containing XMLHttpRequest used to identify ajax call 
+  //that would prevent CORS from working
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);

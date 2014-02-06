@@ -29,11 +29,6 @@ class App < Sinatra::Base
 		html :'404'
 	end
 
-	#render an page in the param...
-	def html(view)
-		File.read(File.join('app',"#{view.to_s}.html"))
-	end
-	
 	#dinamically URL's it the best way in this case, cause we have a lot of 
 	#request and routes...
 	get '/:action' do
@@ -44,5 +39,9 @@ class App < Sinatra::Base
 		def sendRequest(path)
 			Net::HTTP.get_print(path)
 		end
-	
+
+		#render an page in the param...
+		def html(view)
+			File.read(File.join('app',"#{view.to_s}.html"))
+		end
 end
