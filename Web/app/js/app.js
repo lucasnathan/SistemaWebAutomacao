@@ -9,7 +9,7 @@ var app = angular.module('myApp', [
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
 	$routeProvider.when('/tv' , {templateUrl: 'views/tv.html', controller: 'TvCtrl'});
 	$routeProvider.when('/ar' , {templateUrl: 'views/ar.html', controller: 'ArCtrl'});
-	$routeProvider.when('/luz', {templateUrl:'views/luz.html', controller: 'LuzCtrl'});  
+	$routeProvider.when('/luz', {templateUrl: 'views/luz.html',controller: 'LuzCtrl'});  
 	$routeProvider.otherwise({redirectTo: '/tv'});
 
 	//Enable cross domain calls

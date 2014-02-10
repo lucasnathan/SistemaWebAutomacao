@@ -1,22 +1,14 @@
-<div class="page-header">
-	<h1>Controle de Iluminação</h1>
-</div>	
-<!-- Box -->
-<div ng-controller="LuzCtrl" class="jumbotron">
-	<!-- content -->
-	<div class="container">
-		<!-- Botoes de Controle -->
-		
-		<div class="col-md-4">
-			<h3>Lâmpada 1</h3>
-			<button type="button" ng-click = 'powerOn()' id="lamp1" class="btn btn-danger btn-lg" align="center"> <span class="glyphicon glyphicon-off"></span> </button>
-		</div>
-		
-		<div class="col-md-4">
-			<h3>Lâmpada 2</h3>
-		    <button type="button" ng-click = 'powerOff()' class="btn btn-danger btn-lg" align="center"> <span class="glyphicon glyphicon-off"></span> </button>
-		</div>
-	<!-- content -->	
-	</div>
 <!-- jumbotron --> 
+<div class="jumbotron"> 
+
+	<!-- Botoes de Controle -->
+	<label for="liga1">Luz 1</label>
+	<br>
+	<button id="liga1" align="center" type="button" class="btn btn-success" > <span class="glyphicon glyphicon-off"></span> </button>
+	<button id="desliga1" align="center" type="button" class="btn btn-danger" > <span class="glyphicon glyphicon-off"></span> </button>
+	<br>
+	<label for="liga2">Luz 2</label>
+	<br>
+	<button id="liga2" align="center" type="button" class="btn btn-success" > <span class="glyphicon glyphicon-off"></span> </button>
+	<button id="desliga2" align="center" type="button" class="btn btn-danger" > <span class="glyphicon glyphicon-off"></span> </button>
 </div>

@@ -1,47 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app='myApp'>
-    <head>
-		<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">		
-		
-		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">	
-		<link rel="shortcut icon" href="favicon.ico">	
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/starter-template.css">
-        <link href="css/simple-sidebar.css" rel="stylesheet">
-		
-        <title> Projeto Automação </title>
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+	
+
+	
+	<title>Projeto</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- SB-Admin CSS -->
+	<link href="css/sb-admin.css" rel="stylesheet">	
+	<link href="css/sb-admin.css" rel="stylesheet">	
 	</head>
-	
-	
     <body>
+		<!--top nav-bar -->
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-e-collapse"> 
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Automacao</a> </div>
+					<!--/.navbar-header -->
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#/ar">Ar Condicionado</a></li>
+							<li><a href="#/tv">Televisor</a></li>
+							<li><a href="#/luz">Iluminação</a></li>
+						</ul>
+					</div>
+					<!--/.nav-collapse --> 
+			</div>
+			<!--/.container--> 
+		</div>
+		<!--/.nav-default-->
+	
+	
+	
 		<!-- Sidebar -->
 		<div id="wrapper">
-			<div id="sidebar-wrapper">
-				<ul class="sidebar-nav"> 
-					<li><a href="#/tv">Televisão</a></li>
-					<li><a href="#/ar">Ar Condicionado</a></li>
+			<!-- Sidebar -->
+			<div class="collapse navbar-collapse navbar-e-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li><a href="#/tv">Televisor</a></li>
 					<li><a href="#/luz">Iluminação</a></li>
-				</ul>			
+					<li><a href="#/ar">Ar Condicionado</a></li>
+				</ul>
 			</div>
-		
-		
+			<!-- sidebar-wrapper-->
+
 			<!-- Page content -->
-			<div id="page-content-wrapper">
-				<div class="page-content inset">
-					<div class="row">
-						<div class="col-md-12"> 
-							<ng:view></ng:view>
-						</div>
-					</div>
+			<div class="container">
+				<div class="starter-template">
+					<ng:view></ng:view>
 				</div>
 			</div>
 		</div>
-		
-		<script src="libs/angular.min.js"></script>
+		<script src="libs/angular.min.js"  ng:autobind ></script>
 		<script src="libs/angular-route.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/controllers.js"></script>
+		<script src="libs/jquery.min.js"></script>
+		<script src="libs/bootstrap.min.js"></script>
+ 		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>		
     </body>
 </html>
