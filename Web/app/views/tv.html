@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="Control">
     <div class="starter-template">
       <h1>Controle do Televisor</h1>
       <!-- Box -->
@@ -7,42 +7,42 @@
         <!-- Botoes de Controle -->
         <div class"btn-group-vertical">
           <div clas="btn-group-vertical1">
-            <button text-align="center" type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
+            <button ng-click='sendAction("/powertv")' text-align="center" type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-off"></span> </button>
           </div>
           <div class="btn-group-vertical">
-            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+            <button ng-click='sendAction("/sobevolume")' type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
             <button class="btn btn-default">volume</button>
-            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+            <button ng-click='sendAction("/descevolume")' type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
           </div>
           <div class="btn-group-vertical">
-            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
+            <button ng-click='sendAction("/sobecanal")' type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-up"></span> </button>
             <button class="btn btn-default">canal</button>
-            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
+            <button ng-click='sendAction("/descecanal")' type="button" class="btn btn-default"> <span class="glyphicon glyphicon-chevron-down"></span> </button>
           </div>
         </div>
         <!--btn-vertical-->
         
         <div class="btn-group">
-          <button type="button" class="btn btn-default"> 1 </button>
-          <button type="button" class="btn btn-default"> 2 </button>
-          <button type="button" class="btn btn-default"> 3 </button>
+          <button ng-click='sendAction("/1")' type="button" class="btn btn-default"> 1 </button>
+          <button ng-click='sendAction("/2")' type="button" class="btn btn-default"> 2 </button>
+          <button ng-click='sendAction("/3")' type="button" class="btn btn-default"> 3 </button>
         </div>
         <br>
         <div class="btn-group">
-          <button type="button" class="btn btn-default"> 4 </button>
-          <button type="button" class="btn btn-default"> 5 </button>
-          <button type="button" class="btn btn-default"> 6 </button>
+          <button ng-click='sendAction("/4")' type="button" class="btn btn-default"> 4 </button>
+          <button ng-click='sendAction("/5")' type="button" class="btn btn-default"> 5 </button>
+          <button ng-click='sendAction("/6")' type="button" class="btn btn-default"> 6 </button>
         </div>
         <br>
         <div class="btn-group">
-          <button type="button" class="btn btn-default"> 7 </button>
-          <button type="button" class="btn btn-default"> 8 </button>
-          <button type="button" class="btn btn-default"> 9 </button>
+          <button ng-click='sendAction("/7")' type="button" class="btn btn-default"> 7 </button>
+          <button ng-click='sendAction("/8")' type="button" class="btn btn-default"> 8 </button>
+          <button ng-click='sendAction("/9")' type="button" class="btn btn-default"> 9 </button>
         </div>
         <br>
         <div class="btn-group">
           <button disabled type="button" class="btn btn-default"> * </button>
-          <button type="button" class="btn btn-default"> 0 </button>
+          <button ng-click='sendAction("/0")' type="button" class="btn btn-default"> 0 </button>
           <button disabled type="button" class="btn btn-default"> * </button>
         </div>
       </div>

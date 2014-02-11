@@ -36,7 +36,9 @@ class App < Sinatra::Base
 	end
 	
 	private
+		#send HTTP GET request to the server...
 		def sendRequest(path)
+			puts path
 			Net::HTTP.get_print(path)
 		end
 
