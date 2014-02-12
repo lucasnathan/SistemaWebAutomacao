@@ -1,28 +1,33 @@
 <!-- jumbotron --> 
-<div class="jumbotron" ng-controller='Control'>
+<div class="container" ng-controller='Control'>
+	<div class="starter-template">
+		<h1>Controle da Iluminação</h1>
+		<div class="jumbotron"> 
 
-	<!-- Botoes de Controle -->
-	<label for="liga1">Luz 1</label>
-	<br>
-	
-	<button ng-click='sendAction("/ligalamp1")' align="center" type="button" class="btn btn-success" >
-		<span class="glyphicon glyphicon-off"></span>
-	</button>
+			<!-- Botoes de Controle -->
+			<label for="liga1">Luz 1</label>
+			<br>
+			
+			<button ng-click='sendAction("/ligalamp1")' align="center" type="button" class="btn btn-success" >
+				<span class="glyphicon glyphicon-off"></span>
+			</button>
 
-	<button ng-click='sendAction("/desligalamp1")'align="center" type="button" class="btn btn-danger" >
-		<span class="glyphicon glyphicon-off"></span>
-	</button>
-	
-	<br>
-	
-	<label for="liga2">Luz 2</label>
-	<br>
-	
-	<button ng-click='sendAction("/ligalamp2")' align="center" type="button" class="btn btn-success" >
-		<span class="glyphicon glyphicon-off"></span>
-	</button>
+			<button ng-click='sendAction("/desligalamp1")'align="center" type="button" class="btn btn-danger" >
+				<span class="glyphicon glyphicon-off"></span>
+			</button>
+			
+			<br>
+			
+			<label for="liga2">Luz 2</label>
+			<br>
+			
+			<button ng-click='sendAction("/ligalamp2")' align="center" type="button" class="btn btn-success" >
+				<span class="glyphicon glyphicon-off"></span>
+			</button>
 
-	<button ng-click='sendAction("/desligalamp2")' align="center" type="button" class="btn btn-danger" >
-		<span class="glyphicon glyphicon-off"></span>
-	</button>
+			<button ng-click='sendAction("/desligalamp2")' align="center" type="button" class="btn btn-danger" >
+				<span class="glyphicon glyphicon-off"></span>
+			</button>
+		</div>
+	</div>
 </div>
